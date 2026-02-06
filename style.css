@@ -1,0 +1,391 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0a0a0a;
+    color: #f5f5f5;
+    line-height: 1.6;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+/* STRUCTURE */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER */
+.header {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #888;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+/* NAVIGATION */
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-link:not(.nav-btn):hover {
+    color: #fff;
+}
+
+.nav-link:not(.nav-btn)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #fff;
+    transition: width 0.3s;
+}
+
+.nav-link:not(.nav-btn):hover::after {
+    width: 100%;
+}
+
+/* BOUTON CV */
+.nav-btn {
+    border: 1px solid #00d4ff;
+    padding: 6px 18px !important;
+    border-radius: 4px;
+    color: #00d4ff !important;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-btn:hover {
+    background: rgba(0, 212, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+    transform: translateY(-2px);
+    color: #fff !important;
+}
+
+/* SECTIONS */
+.section {
+    padding: 60px 0;
+    border-bottom: 1px solid #222;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 24px;
+    background: linear-gradient(135deg, #00d4ff 0%, #0088ff 100%);
+    border-radius: 2px;
+}
+
+/* À PROPOS */
+.about-card {
+    max-width: 800px;
+}
+
+.about-text {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.about-text strong {
+    color: #fff;
+    font-weight: 500;
+}
+
+/* CARTES (Formation, Projets...) */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 132, 255, 0.1);
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.formation-date {
+    display: inline-block;
+    background: rgba(0, 132, 255, 0.1);
+    color: #00d4ff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(0, 132, 255, 0.2);
+}
+
+/* COMPÉTENCES */
+.skill-list {
+    list-style: none;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.skill-name {
+    flex: 1;
+    color: #ccc;
+}
+
+.skill-level {
+    width: 80px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-left: 15px;
+}
+
+.skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00d4ff, #0088ff);
+    border-radius: 2px;
+}
+
+/* PROJETS & TAGS */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.05);
+    color: #aaa;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- LOGIQUE "VOIR PLUS" (CSS AVANCÉ) --- */
+/* Cache l'input technique */
+.show-more-toggle {
+    display: none;
+}
+
+/* Cache le projet supplémentaire par défaut */
+.extra-project {
+    display: none; 
+}
+
+/* Si l'input est coché (checked), on affiche le projet extra */
+.show-more-toggle:checked ~ .projects-grid .extra-project {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Conteneur du bouton */
+.show-more-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Style du bouton */
+.show-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.show-more-btn:hover {
+    background: #00d4ff;
+    border-color: #00d4ff;
+    color: #0a0a0a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+.btn-icon {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* Quand c'est coché : On change le texte et la flèche */
+.show-more-toggle:checked ~ .show-more-container .show-more-btn .btn-icon {
+    transform: rotate(180deg);
+}
+
+.show-more-toggle:checked ~ .show-more-container .show-more-btn .btn-text {
+    display: none;
+}
+
+.show-more-toggle:checked ~ .show-more-container .show-more-btn::after {
+    content: "Voir moins de projets";
+}
+
+/* CONTACT */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.contact-item {
+    text-align: center;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.contact-icon {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #00d4ff;
+}
+
+.contact-label {
+    font-size: 14px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.contact-value {
+    font-size: 15px;
+    color: #fff;
+    word-break: break-all;
+}
+
+/* FOOTER */
+.footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid #222;
+    margin-top: 60px;
+}
+
+.footer-text {
+    color: #666;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .container { padding: 0 15px; }
+    .title { font-size: 36px; }
+    .nav { gap: 15px; padding: 15px 0; }
+    .nav-btn { width: 100%; justify-content: center; margin-top: 10px; margin-left: 0; }
+    .card-grid { grid-template-columns: 1fr; }
+}
