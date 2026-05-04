@@ -189,14 +189,6 @@ body {
     margin-bottom: 10px;
 }
 
-.card p {
-    white-space: pre-line;
-    word-break: break-word;
-    color: #ccc;
-    font-size: 15px;
-    line-height: 1.7;
-}
-
 .formation-date {
     display: inline-block;
     background: rgba(0, 132, 255, 0.1);
@@ -374,4 +366,5 @@ body {
     color: #666;
     font-size: 14px;
     letter-spacing: 1px;
+>>>>>>> a5209765f839172e98e412d1afa9335c44035d66
 }
